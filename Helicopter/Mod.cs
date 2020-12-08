@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using TLDLoader;
 using UnityEngine;
 
@@ -68,13 +68,6 @@ namespace HelicopterMod
                                                                                       // adds all the required stuff for it, just make sure prefab is setup correctly
                                                                                       // TODO: MAKE HELICOPTER SCRIPT MORE DYNAMIC!
                 helicopterObj.transform.position = mainscript.M.player.transform.position + (Vector3.back * 5) + (Vector3.up * 5); // at the home, this is just outside the back door!
-                if (itemdatabase.d.gbike01.GetComponent<HelicopterScript>())
-                {
-                    Debug.Log("Helicopter script was already attached to bike - weird?");
-                    return;
-                }
-                itemdatabase.d.gbike01.AddComponent<HelicopterScript>();
-                // spawn with bike
             }
             else
             {

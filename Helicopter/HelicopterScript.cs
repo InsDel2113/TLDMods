@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,7 +99,7 @@ namespace HelicopterMod
                 DoMovement();
             }
         }
-        
+
         public void OnGUI()
         {
 
@@ -118,32 +118,32 @@ namespace HelicopterMod
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.up * HelicopterForce * Time.deltaTime);
+                rb.AddForce(gameObject.transform.up * HelicopterForce * Time.deltaTime);
                 DoEffects(); // just in case the ground check is true but user still pressing space
             }
             if (Input.GetKey(KeyCode.W))
             {
-                gameObject.GetComponent<Rigidbody>().AddTorque(gameObject.transform.forward * -HelicopterTorque * Time.deltaTime);
+                rb.AddTorque(gameObject.transform.forward * -HelicopterTorque * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                gameObject.GetComponent<Rigidbody>().AddTorque(gameObject.transform.forward * HelicopterTorque * Time.deltaTime);
+                rb.AddTorque(gameObject.transform.forward * HelicopterTorque * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                gameObject.GetComponent<Rigidbody>().AddTorque(gameObject.transform.right * -HelicopterTorque * Time.deltaTime);
+                rb.AddTorque(gameObject.transform.right * -HelicopterTorque * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                gameObject.GetComponent<Rigidbody>().AddTorque(gameObject.transform.right * HelicopterTorque * Time.deltaTime);
+                rb.AddTorque(gameObject.transform.right * HelicopterTorque * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.LeftControl))
             {
-                gameObject.GetComponent<Rigidbody>().AddTorque(-gameObject.transform.up * HelicopterTurnSpeed * Time.deltaTime);
+                rb.AddTorque(-gameObject.transform.up * HelicopterTurnSpeed * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.LeftAlt))
             {
-                gameObject.GetComponent<Rigidbody>().AddTorque(gameObject.transform.up * HelicopterTurnSpeed * Time.deltaTime);
+                rb.AddTorque(gameObject.transform.up * HelicopterTurnSpeed * Time.deltaTime);
             }
         }
     }
